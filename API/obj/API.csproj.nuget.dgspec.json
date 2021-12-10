@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\.NET CORE + ANGULAR 12\\CORELAR\\API\\API.csproj": {}
+    "F:\\CORELAR\\API\\API.csproj": {}
   },
   "projects": {
-    "E:\\.NET CORE + ANGULAR 12\\CORELAR\\API\\API.csproj": {
+    "F:\\CORELAR\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\.NET CORE + ANGULAR 12\\CORELAR\\API\\API.csproj",
+        "projectUniqueName": "F:\\CORELAR\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "E:\\.NET CORE + ANGULAR 12\\CORELAR\\API\\API.csproj",
+        "projectPath": "F:\\CORELAR\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\.NET CORE + ANGULAR 12\\CORELAR\\API\\obj\\",
+        "outputPath": "F:\\CORELAR\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -47,6 +47,11 @@
               "target": "Package",
               "version": "[5.0.10, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[5.0.10, )"
@@ -54,6 +59,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite.Core": {
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

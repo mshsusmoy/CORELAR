@@ -90,10 +90,10 @@ F:\CORELAR\API\obj\Debug\net5.0\API.dll
 F:\CORELAR\API\obj\Debug\net5.0\ref\API.dll
 F:\CORELAR\API\obj\Debug\net5.0\API.pdb
 F:\CORELAR\API\obj\Debug\net5.0\API.genruntimeconfig.cache
-F:\CORELAR\API\obj\Debug\net5.0\API.csproj.AssemblyReference.cache
 F:\CORELAR\API\bin\Debug\net5.0\client\angular.json
 F:\CORELAR\API\bin\Debug\net5.0\client\package-lock.json
 F:\CORELAR\API\bin\Debug\net5.0\client\package.json
 F:\CORELAR\API\bin\Debug\net5.0\client\tsconfig.app.json
 F:\CORELAR\API\bin\Debug\net5.0\client\tsconfig.json
 F:\CORELAR\API\bin\Debug\net5.0\client\tsconfig.spec.json
+F:\CORELAR\API\obj\Debug\net5.0\API.csproj.AssemblyReference.cache

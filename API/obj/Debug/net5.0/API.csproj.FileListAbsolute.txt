@@ -97,3 +97,10 @@ F:\CORELAR\API\bin\Debug\net5.0\client\tsconfig.app.json
 F:\CORELAR\API\bin\Debug\net5.0\client\tsconfig.json
 F:\CORELAR\API\bin\Debug\net5.0\client\tsconfig.spec.json
 F:\CORELAR\API\obj\Debug\net5.0\API.csproj.AssemblyReference.cache
+F:\CORELAR\API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\CORELAR\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+F:\CORELAR\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+F:\CORELAR\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+F:\CORELAR\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\CORELAR\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+F:\CORELAR\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

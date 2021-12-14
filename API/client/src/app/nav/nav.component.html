@@ -4,10 +4,10 @@
       <a class="navbar-brand" href="#">CORELAR</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
-              aria-expanded="false" aria-label="Toggle navigation" *ngIf="loggedIn">
+              aria-expanded="false" aria-label="Toggle navigation" *ngIf="accountService.currentUser$ | async">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse" *ngIf="loggedIn">
+      <div class="collapse navbar-collapse" id="navbarCollapse" *ngIf="accountService.currentUser$ | async">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link" href="#">Matches</a>
@@ -18,13 +18,10 @@
           <li class="nav-item">
             <a class="nav-link">Messages</a>
           </li>
-          <li class="nav-item" *ngIf="loggedIn">
-            <a class="nav-link" (click)="logout()">Logout</a>
-          </li>
         </ul>
       </div>
 
-      <div class="dropdown" *ngIf="loggedIn" dropdown>
+      <div class="dropdown" *ngIf="accountService.currentUser$ | async" dropdown>
           <a class="dropdown-toggle text-light" dropdownToggle>Welcome User</a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
               <a class="dropdown-item">Edit Profile</a>
@@ -33,7 +30,7 @@
           </div>
       </div>
 
-      <form *ngIf="!loggedIn" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+      <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
         <input
                name="username"
                [(ngModel)]="model.username"

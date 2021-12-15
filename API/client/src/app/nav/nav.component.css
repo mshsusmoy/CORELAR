@@ -1,3 +1,7 @@
 .dropdown-toggle, .dropdown-item, .nav-item {
     cursor:pointer;
 }
+
+.bg-nav{
+    background-color: #1A62D2 ;
+}

@@ -35,4 +35,9 @@ export class NavComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
+  collapsed = true;
+     toggleCollapsed(): void {
+       this.collapsed = !this.collapsed;
+     }
+
 }

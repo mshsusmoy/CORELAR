@@ -1,4 +1,5 @@
 ﻿using API.Data;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,10 @@ namespace API.Extensions
         {
             //Token Generator Dependency Injection
             services.AddScoped<ITokenService, TokenService>();
+            //User Repository
+            services.AddScoped<IUserRepository, UserRepository>();
+            //AutoMapper
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 
             //DB Context Dependency Injection
             services.AddDbContext<DataContext>(options =>

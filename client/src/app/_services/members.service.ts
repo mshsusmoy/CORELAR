@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Member } from '../_models/member';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
-  })
-}
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
+//   })
+// };
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,24 @@ const httpOptions = {
 export class MembersService {
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
   getMembers(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
+      })
+    };
     return this.http.get<Member[]>(this.baseUrl + 'users', httpOptions);
   }
 
   getMember(username: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('user'))?.token
+      })
+    };
     return this.http.get<Member>(this.baseUrl + 'users/' + username, httpOptions);
   }
 }

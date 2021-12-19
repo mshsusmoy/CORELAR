@@ -6,9 +6,11 @@ import { TestsErrorsComponent } from './errors/tests-errors/tests-errors.compone
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
 import { MemberDetailtComponent } from './members/member-detailt/member-detailt.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { PreventUnsaveChangesGuard } from './_guards/prevent-unsave-changes.guard';
 
 const routes: Routes = [
   {path: '',component: HomeComponent},
@@ -17,8 +19,9 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate:[AuthGuard],
     children:[
-      {path: 'members',component: MemberListComponent, canActivate: [AuthGuard]},
+      {path: 'members',component: MemberListComponent},
       {path: 'members/:username',component: MemberDetailtComponent},
+      {path: 'member/edit',component: MemberEditComponent,canDeactivate:[PreventUnsaveChangesGuard]},
       {path: 'lists',component: ListsComponent},
       {path: 'messages',component: MessagesComponent}
     ]

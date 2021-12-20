@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "DBuvbz2Or+1q2oNIOdU6vyMXo9nTsTcrDQDLobwFSC8Ni+gqqZT5YmdEf35SEXmJi+BWqxIlyAKk/KLZ22X89Q==",
+  "dgSpecHash": "9/XKhNJaTxjP83D2RjtNz9gMBS7F1VLcFadBKWgfjL3e+EtQ0h0owpeTGM8ih58OyEWP3oNPfJHpCmSO8akzzw==",
   "success": true,
   "projectFilePath": "F:\\CORELAR\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\cloudinarydotnet\\1.15.0\\cloudinarydotnet.1.15.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.10\\microsoft.aspnetcore.authentication.jwtbearer.5.0.10.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -36,6 +37,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.15.0\\microsoft.identitymodel.tokens.6.15.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.typescript.msbuild\\4.5.3\\microsoft.typescript.msbuild.4.5.3.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",

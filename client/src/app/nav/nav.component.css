@@ -5,3 +5,10 @@
 .bg-nav{
     background-color: #1A62D2 ;
 }
+
+
+img{
+    max-height: 50px;
+    border: 2px solid #fff;
+    display: inline;
+}

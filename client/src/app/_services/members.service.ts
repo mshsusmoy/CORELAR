@@ -62,7 +62,6 @@ export class MembersService {
         console.log(this.memberCache.get(Object.values(userParams).join('-')));
         return response;
       }))
-      
   }
 
 

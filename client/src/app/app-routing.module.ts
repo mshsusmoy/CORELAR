@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestsErrorsComponent } from './errors/tests-errors/tests-errors.component';
@@ -9,6 +10,7 @@ import { MemberDetailtComponent } from './members/member-detailt/member-detailt.
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsaveChangesGuard } from './_guards/prevent-unsave-changes.guard';
 import { MemberDetailedResolver } from './_resolvers/member-detailed.resolver';
@@ -24,7 +26,8 @@ const routes: Routes = [
       {path: 'members/:username',component: MemberDetailtComponent, resolve: {member: MemberDetailedResolver}},
       {path: 'member/edit',component: MemberEditComponent,canDeactivate:[PreventUnsaveChangesGuard]},
       {path: 'lists',component: ListsComponent},
-      {path: 'messages',component: MessagesComponent}
+      {path: 'messages',component: MessagesComponent},
+      {path: 'admin',component: AdminPanelComponent, canActivate:[AdminGuard]}
     ]
   },
   {path:'errors', component:TestsErrorsComponent},

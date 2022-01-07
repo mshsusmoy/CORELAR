@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { PresenceService } from './presence.service';
 import { User } from './_models/user';
 import { AccountService } from './_services/account.service';
 
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   sub_title = 'Developed By Susmoy';
   users: any;
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService, private presence: PresenceService) {
 
   }
   ngOnInit() {
@@ -23,7 +24,11 @@ export class AppComponent implements OnInit {
 
   setCurrentUser(){
     const user: User = JSON.parse(localStorage.getItem('user'));
-    this.accountService.setCurrentUser(user);
+    if(user){
+      this.accountService.setCurrentUser(user);
+      this.presence.createHubConnection(user);
+    }
+    
   }
 
 }

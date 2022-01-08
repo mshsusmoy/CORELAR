@@ -21,12 +21,9 @@ namespace API.Extensions
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             //Token Generator Dependency Injection
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<IphotoService,PhotoService>();
-            services.AddScoped<ILikesRepository,LikesRepository>();
-            services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddScoped<IphotoService, PhotoService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<LogUserActivity>();
-            //User Repository
-            services.AddScoped<IUserRepository, UserRepository>();
             //AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 

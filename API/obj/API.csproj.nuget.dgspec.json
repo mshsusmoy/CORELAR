@@ -82,6 +82,10 @@
               "target": "Package",
               "version": "[4.5.3, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
             "SQLite": {
               "target": "Package",
               "version": "[3.13.0, )"

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
+  learnMore = false;
 
   constructor() { }
 
@@ -15,10 +16,20 @@ export class HomeComponent implements OnInit {
   }
 
   registerToggle(){
+    this.learnMore ? this.learnMore = !this.learnMore : false;
     this.registerMode = !this.registerMode;
   }
 
   cancelRegisterMode(event: boolean){
     this.registerMode = event;
+  }
+
+  learnMoreToggle(){
+    this.registerMode ? this.registerMode = !this.registerMode : false;
+    this.learnMore = !this.learnMore;
+  }
+
+  cancelLearnMoreMode(event: boolean){
+    this.learnMore = event;
   }
 }

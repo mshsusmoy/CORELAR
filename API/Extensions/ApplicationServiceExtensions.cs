@@ -30,7 +30,7 @@ namespace API.Extensions
             //DB Context Dependency Injection
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
             });
 
             return services;

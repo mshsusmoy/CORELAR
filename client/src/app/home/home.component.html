@@ -1,10 +1,10 @@
 <div class="container">
-    <div *ngIf="!registerMode" style="text-align: center;">
+    <div *ngIf="!registerMode && !learnMore" style="text-align: center;">
         <h1>Find your match</h1>
         <p class="lead">Sign Up</p>
         <div class="text-center">
             <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
-            <button class="btn btn-info btn-lg">Learn more</button>
+            <button (click)="learnMoreToggle()" class="btn btn-info btn-lg">Learn more</button>
         </div>
     </div>
 
@@ -12,6 +12,14 @@
         <div class="row justify-content-center">
             <div class="col-4">
                 <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="learnMore" class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <app-about-dev (cancelAboutDev)="cancelLearnMoreMode($event)"></app-about-dev>
             </div>
         </div>
     </div>

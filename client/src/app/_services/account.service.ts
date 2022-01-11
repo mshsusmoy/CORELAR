@@ -41,6 +41,18 @@ export class AccountService {
     )
   }
 
+  changePassword(model: any){
+    return this.http.post(this.baseUrl + 'account/change-password', model).pipe(
+      map((response: User) => {
+        const user = response;
+        if(user){
+          //this.setCurrentUser(user);
+          //this.presence.createHubConnection(user);
+        }
+      })
+    )
+  }
+
   setCurrentUser(user: User){
     user.roles = [];
     const roles = this.getDecodedToken(user.token).role;

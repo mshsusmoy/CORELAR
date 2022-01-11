@@ -6,6 +6,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { TestsErrorsComponent } from './errors/tests-errors/tests-errors.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
+import { ChangePasswordComponent } from './members/change-password/change-password/change-password.component';
 import { MemberDetailtComponent } from './members/member-detailt/member-detailt.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
       {path: 'member/edit',component: MemberEditComponent,canDeactivate:[PreventUnsaveChangesGuard]},
       {path: 'lists',component: ListsComponent},
       {path: 'messages',component: MessagesComponent},
+      {path: 'member/change-password',component: ChangePasswordComponent},
       {path: 'admin',component: AdminPanelComponent, canActivate:[AdminGuard]}
     ]
   },

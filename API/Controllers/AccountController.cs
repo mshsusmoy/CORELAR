@@ -1,6 +1,7 @@
 ﻿using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
@@ -19,10 +20,12 @@ namespace API.Controllers
         public readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IUnitOfWork _unitOfWork;
 
         public AccountController(UserManager<AppUser> userManager,SignInManager<AppUser> signInManager,
-        ITokenService tokenService, IMapper mapper)
+        ITokenService tokenService, IMapper mapper,IUnitOfWork unitOfWork)
         {
+            _unitOfWork = unitOfWork;
             _signInManager = signInManager;
             _userManager = userManager;
             _mapper = mapper;
@@ -98,6 +101,23 @@ namespace API.Controllers
                 KnownAs = user.KnownAs,
                 Gender = user.Gender
             };
+        }
+
+        [HttpPost("change-password")]
+        public async Task<ActionResult<UserDto>> ChangePassword(ChangePasswordDto changePasswordDto){
+            var user = await _unitOfWork.UserRepository.GetUserByUsernameAsync(User.GetUserName());
+
+            var result = await _userManager.ChangePasswordAsync(user, changePasswordDto.CurrentPassword,changePasswordDto.NewPassword);
+
+            if (!result.Succeeded) return Unauthorized();
+
+                return new UserDto 
+                { 
+                    UserName = user.UserName,
+                    Token = await _tokenService.CreateToken(user),
+                    KnownAs = user.KnownAs,
+                    Gender = user.Gender
+                };
         }
 
         private async Task<bool> UserExists(string username)

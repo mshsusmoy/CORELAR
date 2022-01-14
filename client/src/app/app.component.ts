@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { PresenceService } from './presence.service';
 import { User } from './_models/user';
 import { AccountService } from './_services/account.service';
+import { StatusService } from './_services/status.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ export class AppComponent implements OnInit {
   sub_title = 'Developed By Susmoy';
   users: any;
 
-  constructor(private accountService: AccountService, private presence: PresenceService) {
+  constructor(private accountService: AccountService, private presence: PresenceService,
+    private statusService: StatusService) {
 
   }
   ngOnInit() {
@@ -27,6 +29,8 @@ export class AppComponent implements OnInit {
     if(user){
       this.accountService.setCurrentUser(user);
       this.presence.createHubConnection(user);
+      this.statusService.createHubConnection(user);
+      
     }
     
   }

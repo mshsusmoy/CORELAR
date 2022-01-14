@@ -4,6 +4,7 @@ import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestsErrorsComponent } from './errors/tests-errors/tests-errors.component';
+import { FeedViewComponent } from './feed-view/feed-view.component';
 import { HomeComponent } from './home/home.component';
 import { ListsComponent } from './lists/lists.component';
 import { ChangePasswordComponent } from './members/change-password/change-password/change-password.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
       {path: 'lists',component: ListsComponent},
       {path: 'messages',component: MessagesComponent},
       {path: 'member/change-password',component: ChangePasswordComponent},
+      {path: 'feed',component: FeedViewComponent},
       {path: 'admin',component: AdminPanelComponent, canActivate:[AdminGuard]}
     ]
   },

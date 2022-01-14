@@ -36,6 +36,7 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 import { AboutDevComponent } from './about/about-dev/about-dev.component';
 import { ChangePasswordComponent } from './members/change-password/change-password/change-password.component';
+import { FeedViewComponent } from './feed-view/feed-view.component';
 
 
 
@@ -65,7 +66,8 @@ import { ChangePasswordComponent } from './members/change-password/change-passwo
     RolesModalComponent,
     ConfirmDialogComponent,
     AboutDevComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    FeedViewComponent
   ],
   imports: [
     BrowserModule,

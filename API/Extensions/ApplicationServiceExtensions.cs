@@ -23,6 +23,8 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IphotoService, PhotoService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ILikesRepository, LikesRepository>();
+            services.AddScoped<IStatusRepository, StatusRepository>();
             services.AddScoped<LogUserActivity>();
             //AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);

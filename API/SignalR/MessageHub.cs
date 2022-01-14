@@ -85,7 +85,6 @@ namespace API.SignalR
             _unitOfWork.MessageRepository.AddMessage(message);
 
             if(await _unitOfWork.Complete()){
-                
                 await Clients.Group(groupName).SendAsync("NewMessage", _mapper.Map<MessageDto>(message));
             }
         }

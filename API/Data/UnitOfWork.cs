@@ -21,6 +21,8 @@ namespace API.Data
 
         public ILikesRepository LikesRepository => new LikesRepository(_context);
 
+        public IStatusRepository StatusRepository => new StatusRepository(_context,_mapper);
+
         public async Task<bool> Complete()
         {
             return await _context.SaveChangesAsync() > 0;

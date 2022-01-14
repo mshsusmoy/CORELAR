@@ -53,6 +53,10 @@ export class PresenceService {
           .pipe(take(1))
           .subscribe(() => this.router.navigateByUrl('/members/' + userName + '?tab=3'));
       })
+
+      this.hubConnection.on('NewStatusPosted', ({userName, knownAs}) => {
+        this.toastr.info(knownAs + ' has a new status!');
+      })
     }
 
     stopHubConnection(){

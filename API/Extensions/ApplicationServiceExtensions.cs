@@ -22,6 +22,8 @@ namespace API.Extensions
             //Token Generator Dependency Injection
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IphotoService, PhotoService>();
+            services.AddScoped<ILikesRepository, LikesRepository>();
+            services.AddScoped<IStatusRepository, StatusRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<LogUserActivity>();
             //AutoMapper

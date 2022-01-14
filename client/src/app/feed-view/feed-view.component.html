@@ -5,30 +5,70 @@
 <hr>
 <div class="card mb-3">
 	<div class="card-header">
-	  Push Your Status
+	  Post Your Status
 	</div>
 	<form #statusForm="ngForm" (ngSubmit)="Publish(); statusForm.reset()" class="card-body">
 		<textarea class="form-control mb-2" [(ngModel)]="model.status" name="status" rows="3" style="height: 109px;"></textarea>
-		<button class="btn btn-outline-primary  btn-block">Publish</button>
+		<button class="btn btn-outline-primary btn-block" type="submit">Publish</button>
 	</form>
 </div>
 
-<div class="card text-white bg-dark  mb-3" *ngFor="let item of items">
-	<div class="card-header">
-	  susmoy @theDeveloper766 -- status time: 12:00 AM BDT, 13 JAN, 2022
+<div class="card text-black   mb-3" *ngFor="let status of (statusService.statusThread$ | async)">
+	<div class="d-flex justify-content-between p-2 px-3 bg-feed">
+		<div class="d-flex flex-row align-items-center"> <img src="{{status.statusOwnerPhotoUrl || './assets/user.png'}}" width="50" class="rounded-circle">
+			<div class="d-flex flex-column ml-2"> <span class="font-weight-bold">{{status.statusOwnerName}}</span></div>
+		</div>
+		<div class="d-flex flex-row mt-1 ellipsis"> <small class="mr-2">{{status.statusPostTime | timeago}}</small>  </div>
 	</div>
-	<div class="card-body">
-	  <h3 class="card-title">Angular 12</h3>
-	  <p class="card-text">Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.
 
-		These Angular docs help you learn and use the Angular framework and development platform, from your first application to optimizing complex single-page apps for enterprises. Tutorials and guides include downloadable examples to accelerate your projects.</p>
+	<div class="card-body">
+	  <p class="card-text">{{status.content}}</p>
 
 	  <div style="display: inline-block;">
 		
-			<button class="btn btn-outline-primary btn-sm mr-2"><i class="fa fa-thumbs-up"></i></button>
+			<button class="btn btn-outline-primary btn-sm mr-2"><i class="fa fa-thumbs-up"  style="color: rgb(5, 105, 255); "></i></button>
 		
-			<button class="btn btn-outline-primary btn-sm "><i class="fa fa-share"></i></button>
+			<button class="btn btn-outline-primary btn-sm "><i class="fa fa-share"  style="color: rgb(5, 105, 255);"></i></button>
 		
 	  </div>
 	</div>
 </div>
+
+<!-- <div class="container mt-5 mb-5">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="d-flex justify-content-between p-2 px-3">
+                    <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/UXdKE3o.jpg" width="50" class="rounded-circle">
+                        <div class="d-flex flex-column ml-2"> <span class="font-weight-bold">Jeanette Sun</span> <small class="text-primary">Collegues</small> </div>
+                    </div>
+                    <div class="d-flex flex-row mt-1 ellipsis"> <small class="mr-2">20 mins</small> <i class="fa fa-ellipsis-h"></i> </div>
+                </div> <img src="https://i.imgur.com/xhzhaGA.jpg" class="img-fluid">
+                <div class="p-2">
+                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-row icons d-flex align-items-center"> <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i> </div>
+                        <div class="d-flex flex-row muted-color"> <span>2 comments</span> <span class="ml-2">Share</span> </div>
+                    </div>
+                    <hr>
+                    <div class="comments">
+                        <div class="d-flex flex-row mb-2"> <img src="https://i.imgur.com/9AZ2QX1.jpg" width="40" class="rounded-image">
+                            <div class="d-flex flex-column ml-2"> <span class="name">Daniel Frozer</span> <small class="comment-text">I like this alot! thanks alot</small>
+                                <div class="d-flex flex-row align-items-center status"> <small>Like</small> <small>Reply</small> <small>Translate</small> <small>18 mins</small> </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row mb-2"> <img src="https://i.imgur.com/1YrCKa1.jpg" width="40" class="rounded-image">
+                            <div class="d-flex flex-column ml-2"> <span class="name">Elizabeth goodmen</span> <small class="comment-text">Thanks for sharing!</small>
+                                <div class="d-flex flex-row align-items-center status"> <small>Like</small> <small>Reply</small> <small>Translate</small> <small>8 mins</small> </div>
+                            </div>
+                        </div>
+                        <div class="comment-input"> <input type="text" class="form-control">
+                            <div class="fonts"> <i class="fa fa-camera"></i> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
